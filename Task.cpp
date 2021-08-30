@@ -33,7 +33,7 @@ void generateRandom(queue<int>& PlayerTurn,int n)
         v[i] = i + 1;
  
     // While vector has elements
-    // get a random number from the vector and print it
+    // get a random number from the vector and add in our queue
     while (v.size()) {
         PlayerTurn.push(getNum(v));
     }
@@ -41,7 +41,7 @@ void generateRandom(queue<int>& PlayerTurn,int n)
 
 unordered_map<int,int> RankMap; 
 
-//sorting PlayerRank array based on 
+//sorting PlayerRank array based on already ranked or their current score
 bool sortFirst(const pair<int,int> &a,
                    const pair<int,int> &b)
 {
@@ -150,8 +150,7 @@ void RollTheDice(int N, int M){
 
 int main()
 {
-    RankMap.clear();// to get first random sequence of player in game,after each run its gonna clear sequence
-
+    RankMap.clear();// clearing cache
     int NumberOfPlayer;
     int Points;
 
